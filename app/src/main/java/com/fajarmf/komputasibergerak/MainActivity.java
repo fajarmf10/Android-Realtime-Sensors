@@ -25,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final ListView listView = (ListView) findViewById(R.id.listview);
-        final Button btnGyro = (Button) findViewById(R.id.btnAccel);
+        final Button btnAccel = (Button) findViewById(R.id.btnAccel);
+        final Button btnGyro = (Button) findViewById(R.id.btnGyro);
 
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
 
@@ -43,13 +44,23 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.sensorlist, R.id.sensor, sensorLists);
         mlistView.setAdapter(arrayAdapter);
 
-        btnGyro.setOnClickListener(new View.OnClickListener() {
+        btnAccel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent mIntent = new Intent(MainActivity.this, RealtimeAccel.class);
                 startActivity(mIntent);
             }
         });
+
+        btnGyro.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent mIntent = new Intent(MainActivity.this, RealtimeGyro.class);
+                startActivity(mIntent);
+            }
+        });
+
 
     }
 }

@@ -21,6 +21,7 @@
         </activity>
         <activity android:name=".AccelActivity" />
         <activity android:name=".RealtimeAccel" />
+        <activity android:name=".RealtimeGyro" />
     </application>
 
 </manifest>
