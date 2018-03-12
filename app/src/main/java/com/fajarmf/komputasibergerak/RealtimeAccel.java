@@ -79,9 +79,9 @@ public class RealtimeAccel extends AppCompatActivity implements SensorEventListe
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        sensorX = event.values[2];
+        sensorX = event.values[0];
         sensorY = event.values[1];
-        sensorZ = event.values[0];
+        sensorZ = event.values[2];
 
         seriesX.add(new GraphView.GraphViewData(dataCount, sensorX));
         seriesY.add(new GraphView.GraphViewData(dataCount, sensorY));
